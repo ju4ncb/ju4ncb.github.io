@@ -32,7 +32,7 @@ const Contacto = () => {
               <p>LinkedIn</p>
             </div>
           </div>
-          <div className="imagen__contacto"></div>
+          <div className="contenedor__imagen__contacto"><div className="imagen__contacto"/></div>
         </div>
       </div>
     </>
