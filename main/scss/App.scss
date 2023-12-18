@@ -4,6 +4,7 @@ $color-2:#bd8bff;
 $color-3:#a23eff;
 $color-4:#c300ff;
 $color-5:#ff0055;
+$color-6:#ff00c8;
 $bg-color: #241f2a;
 $primary-font: "Quicksand", "Trebuchet MS", "Lucida Sans Unicode",
 "Lucida Grande", "Lucida Sans", Arial, sans-serif !important;
@@ -173,7 +174,7 @@ $nav-tabs-link-hover-border-color: $color-1;
 
 body {
   font-family: $primary-font;
-  background: #1f212a;
+  background: $bg-color;
 }
 
 /* Note: font-weight for Quicksand <= 500 normal, >= 600 bold */
@@ -365,6 +366,8 @@ main {
   display: block;
 }
 
+// Contacto
+
 .triangulo__superior__contacto{
   display: flex;
   position: relative;
@@ -499,6 +502,85 @@ main {
       width: 35%;
       text-align: center;
       overflow: hidden;
+    }
+  }
+}
+
+// Conocimientos
+
+.titulo__conocimientos{
+  height: 220px;
+  display: flex;
+  background: linear-gradient(
+    to bottom, 
+    rgba($color-6, 0.2), 
+    rgba($color-5, 0.5)
+  );
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(0 5%, 100% 0, 100% 75%, 0 70%);
+  h2{
+    transform: translateY(-40%);
+    font-size: 60px;
+    color: lighten($color-5, 40%);
+    text-shadow: 0 0 15px lighten($color-5, 40%);
+  }
+}
+
+.caja__conocimientos{
+  display: flex;
+  height: 500px;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow: hidden;
+  .conocimientos{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      to bottom,
+      rgba($color-5, 0.2),
+      #00000000
+    );
+    .conocimiento{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      color: lighten($color-5, 20%);
+      i{
+        font-size: 36px;
+        transform: translateY(-20%);
+      }
+      p{
+        color: lighten($color-5, 20%);
+        transition: color 0.4s;
+        font-size: 22px;
+      }
+      transition: color 0.4s, background-color 0.4s;
+    }
+    .conocimiento:hover,
+    .conocimiento__active{
+      background-color: rgba(lighten($color-5, 30%), 0.06);
+      color: lighten($color-5, 10%);
+      p{
+        color: lighten($color-5, 10%);
+      }
+    }
+    .conocimiento__active{
+      background-color: rgba(lighten($color-5, 30%), 0.1);
+    }
+  }
+  .descripcion__conocimientos{
+    flex: 3;
+    background: white;
+    padding: 10px;
+    p{
+      color: $color-6;
+      font-size: 20px;
     }
   }
 }

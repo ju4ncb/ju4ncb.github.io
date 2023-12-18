@@ -25,9 +25,13 @@ const NavBar = () => {
     if (scroll < 550) {
       //currently in home section
       setActiveLink(1);
-    } else if (scroll < 1000) {
+    } else if (scroll < 1100) {
       //currently in contact section
       setActiveLink(2);
+    } else if (scroll < 1600) {
+      setActiveLink(3);
+    } else{
+      setActiveLink(4);
     }
   }
   const [classes, setClasses] = useState("nav nav-tabs nav--top");

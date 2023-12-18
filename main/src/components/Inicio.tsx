@@ -35,10 +35,10 @@ const Header = () => {
         </div>
       </div>
       <div className="greet__bottom">
-        <i className="bi bi-braces"></i>
-        <i className="bi bi-code-slash"></i>
-        <i className="bi bi-database-fill"></i>
-        <i className="bi bi-clipboard2-data-fill"></i>
+        <i className="bi bi-braces" />
+        <i className="bi bi-code-slash" />
+        <i className="bi bi-database-fill" />
+        <i className="bi bi-clipboard2-data-fill" />
       </div>
     </header>
   );

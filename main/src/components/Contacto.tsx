@@ -1,7 +1,7 @@
 const Contacto = () => {
   return (
-    <>
-      <div className="triangulo__superior__contacto" id="seccion-contacto">
+    <section id="seccion-contacto">
+      <div className="triangulo__superior__contacto">
         <h2>CONTACTO</h2>
       </div>
       <div className="seccion__contacto">
@@ -32,10 +32,12 @@ const Contacto = () => {
               <p>LinkedIn</p>
             </div>
           </div>
-          <div className="contenedor__imagen__contacto"><div className="imagen__contacto"/></div>
+          <div className="contenedor__imagen__contacto">
+            <div className="imagen__contacto" />
+          </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
