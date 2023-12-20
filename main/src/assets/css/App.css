@@ -12459,10 +12459,14 @@ main {
 }
 .caja__conocimientos .descripcion__conocimientos {
   flex: 3;
-  background: white;
+  background: #3d3547;
   padding: 10px;
 }
+.caja__conocimientos .descripcion__conocimientos h2, .caja__conocimientos .descripcion__conocimientos .h2 {
+  color: #ff3377;
+  font-size: 24px;
+}
 .caja__conocimientos .descripcion__conocimientos p {
-  color: #ff00c8;
+  color: #ff6699;
   font-size: 20px;
 }/*# sourceMappingURL=App.css.map */

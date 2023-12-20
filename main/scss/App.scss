@@ -576,10 +576,14 @@ main {
   }
   .descripcion__conocimientos{
     flex: 3;
-    background: white;
+    background: lighten($bg-color, 10%);
     padding: 10px;
+    h2{
+      color: lighten($color-5, 10%);
+      font-size: 24px;
+    }
     p{
-      color: $color-6;
+      color: lighten($color-5, 20%);
       font-size: 20px;
     }
   }

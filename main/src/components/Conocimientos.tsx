@@ -40,21 +40,23 @@ const Conocimientos = () => {
         </div>
         <div className="descripcion__conocimientos">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At velit,
-            ullam dolore facilis sequi reiciendis dolorem voluptatum illo quasi
-            et ut rem, repudiandae ipsam. Dignissimos sint quis voluptates
-            laboriosam pariatur?, como que se supone q va texto e imagenes pero
-            la plena me dio pava llenar eso ahora mismo xdddd
+            Aqui se supone q va otro componente dependiendo de la opcion q se
+            elija, pero no me he decidido aun de q la veda.
+          </p>
+          <h2>Lista de crimenes:</h2>
+          <p>
+            Contacto sexual abusivo, Abogar por el derrocamiento del gobierno,
+            Asalto/Agresión Agravada, Robo de identidad agravado, Abuso Sexual
+            Agravado, Apuntar con un puntero láser a un avión, Secuestro de
+            aviones, Lucha contra el crimen organizado, Antimonopolio, Robo a
+            mano armada, Incendio provocado, Asesinato, Ser fan de monogatari,
+            Asalto con un arma mortal, Agredir o matar a un oficial federal,
+            Ayudar o instigar a escapar, Intento de cometer asesinato/homicidio
+            involuntario, Robo a un banco, Fraude de bancarrota/malversación de
+            fondos, Hurto bancario, Atraco a un banco, Chantaje, Bombardeo
           </p>
         </div>
       </div>
-
-      <button type="button" className="btn btn-secondary">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis
-        fugiat veniam maxime a, iusto expedita alias rerum quidem consectetur
-        accusantium in voluptatibus reprehenderit corrupti culpa tempore maiores
-        cum corporis repudiandae.
-      </button>
     </section>
   );
 };

@@ -7,8 +7,11 @@ const Contacto = () => {
       <div className="seccion__contacto">
         <div className="caja__contacto">
           <div className="caja__texto__contacto">
-            <h3>Juan David Caballero Barros</h3>
-            <p>Estudiante de ingeniería de sistemas, 19 años.</p>
+            <h3>Acerca de mí</h3>
+            <p>
+              Tecleo numeritos y letras y hago aplicaciones con eso, necesito
+              chamba (LinkedIn actualmente vacio).
+            </p>
             <div className="linea__texto__contacto">
               <i className="bi bi-telephone" />
               <p>+57 300 614 7044</p>
