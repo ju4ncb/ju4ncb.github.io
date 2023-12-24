@@ -5,6 +5,7 @@ const NavBar = () => {
   let fixed = false;
   let notRunning = true;
   function determineClass(scroll: number) {
+    let classesNames = "";
     console.log(scroll);
     if (notRunning) {
       if (scroll > 100) {
@@ -17,7 +18,7 @@ const NavBar = () => {
           setClasses("nav nav-tabs nav--fixed nav--slide-out");
           setTimeout(() => {
             notRunning = true;
-            setClasses("nav nav-tabs nav--top");
+            setClasses("nav nav-tabs nav--top nav-color-0");
           }, 300);
         }
       }
@@ -25,16 +26,22 @@ const NavBar = () => {
     if (scroll < 550) {
       //currently in home section
       setActiveLink(1);
+      setClasses((prev) => prev + " nav-color-0");
     } else if (scroll < 1100) {
       //currently in contact section
       setActiveLink(2);
-    } else if (scroll < 1600) {
+      setClasses((prev) => prev + " nav-color-1");
+    } else if (scroll < 1800) {
+      //currently in knowledge section
       setActiveLink(3);
-    } else{
+      setClasses((prev) => prev + " nav-color-2");
+    } else {
+      //currently in projects section
       setActiveLink(4);
+      setClasses((prev) => prev + " nav-color-3");
     }
   }
-  const [classes, setClasses] = useState("nav nav-tabs nav--top");
+  const [classes, setClasses] = useState("nav nav-tabs nav--top nav-color-1");
   const [activeLink, setActiveLink] = useState(1);
   useEffect(() => {
     function handleScrollPos() {
