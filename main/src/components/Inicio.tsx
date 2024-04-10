@@ -30,7 +30,7 @@ const Header = () => {
           <img src="./public/icono-big-pf.png" className="logo__side" />
           <div className="text__side">
             <h1>ju4ncb</h1>
-            <p>Portfolio de Juan Caballero</p>
+            <p>Bienvenido a mi portfolio!</p>
           </div>
         </div>
       </div>

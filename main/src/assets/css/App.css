@@ -12367,7 +12367,7 @@ main {
 .seccion__contacto .caja__contacto {
   background: linear-gradient(to bottom, rgba(162, 62, 255, 0.2), rgba(0, 0, 0, 0));
   display: flex;
-  width: 70%;
+  width: 800px;
   height: 300px;
   border-radius: 50px;
   justify-content: space-evenly;
@@ -12452,6 +12452,7 @@ main {
   overflow: hidden;
 }
 .caja__conocimientos .conocimientos {
+  cursor: pointer;
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -12525,7 +12526,83 @@ main {
   animation: glow__separador 8s ease infinite;
   background: #ffccdd;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .python__descripcion__conocimientos {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  height: 100%;
+  border: solid 2px #ffccdd;
+  background: linear-gradient(to bottom, rgba(255, 0, 85, 0.3), rgba(255, 0, 200, 0.1));
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos h3, .caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos .h3 {
+  color: #ffdcf6;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos .mysql__descripcion__conocimientos {
+  height: 125px;
+  width: 125px;
+  display: flex;
+  background: white;
+  -webkit-clip-path: inset(10% round 25px);
+          clip-path: inset(10% round 25px);
+  transform: rotate(35deg) translateY(5%);
+  align-items: center;
+  justify-content: center;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos .mysql__descripcion__conocimientos .imagen {
+  background: url("./mysql-logo.png");
+  background-size: 100%;
+  transform: rotate(-35deg);
+  height: 80%;
+  width: 80%;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos .osql__descripcion__conocimientos {
+  height: 125px;
+  width: 125px;
+  display: flex;
+  background: #ffe0e8;
+  -webkit-clip-path: inset(10% round 25px);
+          clip-path: inset(10% round 25px);
+  transform: rotate(45deg) translateY(5%);
+  align-items: center;
+  justify-content: center;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos .osql__descripcion__conocimientos .imagen {
+  background: url("./oracle-logo.png");
+  background-repeat: no-repeat;
+  background-position-y: 35%;
+  background-size: 100%;
+  transform: rotate(-45deg);
+  height: 80%;
+  width: 80%;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos .sql3__descripcion__conocimientos {
+  height: 125px;
+  width: 125px;
+  display: flex;
+  background: #ffdcf6;
+  -webkit-clip-path: inset(10% round 25px);
+          clip-path: inset(10% round 25px);
+  transform: rotate(55deg) translateY(5%);
+  align-items: center;
+  justify-content: center;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .db__descripcion__conocimientos .sql3__descripcion__conocimientos .imagen {
+  background: url("./sqlite-logo.png");
+  background-repeat: no-repeat;
+  background-position-y: 35%;
+  background-size: 100%;
+  transform: rotate(-55deg);
+  height: 80%;
+  width: 80%;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .python__descripcion__conocimientos {
   width: 175px;
   height: 250px;
   display: flex;
@@ -12533,28 +12610,41 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("./python-logo.png"), rgba(0, 100, 194, 0.3);
-  background-position-x: 50%;
-  background-position-y: 35%;
-  background-repeat: no-repeat;
-  background-size: 160%;
+  background: rgba(27, 27, 27, 0.3);
   border-top-left-radius: 35px;
   border-bottom-left-radius: 35px;
-  transition: background-color 0.8s ease, background-position-x 0.8s ease-in-out;
+  transition: background-color 0.3s ease, background-position-x 0.3s ease-in-out;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .python__descripcion__conocimientos p {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .python__descripcion__conocimientos .imagen {
+  position: fixed;
+  opacity: 1;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  background: url("./python-logo.png"), rgb(49, 49, 49);
+  background-position-y: 60%;
+  background-position-x: 50%;
+  background-size: 240%;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .python__descripcion__conocimientos p {
   color: transparent;
-  transition: color 0.8s ease-out, text-shadow 0.8s ease-out;
+  transition: color 0.3s ease-out, text-shadow 0.3s ease-out;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .python__descripcion__conocimientos:hover {
-  background-color: rgba(0, 62, 119, 0.3);
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .python__descripcion__conocimientos:hover {
+  background-color: rgba(100, 100, 100, 0.3);
   background-position-x: -100%;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .python__descripcion__conocimientos:hover p {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .python__descripcion__conocimientos:hover .imagen {
+  opacity: 0;
+  transform: translateY(50%);
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .python__descripcion__conocimientos:hover p {
   color: #aed8ff;
   text-shadow: 0 0 5px #aed8ff;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .java__descripcion__conocimientos {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .java__descripcion__conocimientos {
   width: 175px;
   height: 250px;
   display: flex;
@@ -12562,26 +12652,38 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("./java-logo.png"), rgba(143, 42, 42, 0.3);
-  background-position-x: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .java__descripcion__conocimientos .imagen {
+  position: fixed;
+  opacity: 1;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  background: url("./java-logo.png"), white;
   background-position-y: 50%;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-size: 60%;
-  transition: background-color 0.8s ease, background-position-y 0.8s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .java__descripcion__conocimientos p {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .java__descripcion__conocimientos p {
   color: transparent;
-  transition: color 0.8s ease-out, text-shadow 0.8s ease-out;
+  transition: color 0.3s ease-out, text-shadow 0.3s ease-out;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .java__descripcion__conocimientos:hover {
-  background-color: rgba(85, 25, 25, 0.3);
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .java__descripcion__conocimientos:hover {
+  background-color: rgba(114, 114, 114, 0.3);
   background-position-y: -75%;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .java__descripcion__conocimientos:hover p {
-  color: #ffa2a2;
-  text-shadow: 0 0 5px #ffa2a2;
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .java__descripcion__conocimientos:hover .imagen {
+  opacity: 0;
+  transform: translateY(50%);
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .js__descripcion__conocimientos {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .java__descripcion__conocimientos:hover p {
+  color: #ffd4a2;
+  text-shadow: 0 0 5px #ffd4a2;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .js__descripcion__conocimientos {
   width: 175px;
   height: 250px;
   display: flex;
@@ -12589,24 +12691,36 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("./javascript-logo.png"), rgba(160, 157, 0, 0.3);
-  background-position-x: 50%;
-  background-position-y: 50%;
-  background-repeat: no-repeat;
-  background-size: 60%;
+  background: rgba(160, 157, 0, 0.3);
   border-top-right-radius: 35px;
   border-bottom-right-radius: 35px;
-  transition: background-color 0.8s ease, background-position-x 0.8s ease-in-out;
+  transition: background-color 0.3s ease;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .js__descripcion__conocimientos p {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .js__descripcion__conocimientos .imagen {
+  position: fixed;
+  opacity: 1;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  background: url("./js-logo.jpeg");
+  background-position-y: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .js__descripcion__conocimientos p {
   color: transparent;
-  transition: color 0.8s ease-out, text-shadow 0.8s ease-out;
+  transition: color 0.3s ease-out, text-shadow 0.3s ease-out;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .js__descripcion__conocimientos:hover {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .js__descripcion__conocimientos:hover {
   background-color: rgba(94, 92, 0, 0.3);
   background-position-x: -150%;
 }
-.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .js__descripcion__conocimientos:hover p {
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .js__descripcion__conocimientos:hover .imagen {
+  opacity: 0;
+  transform: translateY(50%);
+}
+.caja__conocimientos .descripcion__conocimientos .seccion__descripcion__conocimientos .lenguajes__descripcion__conocimientos .js__descripcion__conocimientos:hover p {
   color: #fffeaf;
   text-shadow: 0 0 5px #fffeaf;
 }/*# sourceMappingURL=App.css.map */
