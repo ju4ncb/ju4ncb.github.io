@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: $primary-font;
+  background: $bg-color;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: white;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 27px;
+}
+
+h3 {
+  font-size: 23px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+main {
+  background: $bg-color;
+  height: 1200px;
+  display: block;
+}

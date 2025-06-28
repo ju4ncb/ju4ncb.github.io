@@ -3,6 +3,7 @@ import Contacto from "./components/Contacto";
 import Inicio from "./components/Inicio";
 import NavBar from "./components/NavBar";
 import Proyectos from "./components/Proyectos";
+import "./styles/App.scss";
 
 function App() {
   return (

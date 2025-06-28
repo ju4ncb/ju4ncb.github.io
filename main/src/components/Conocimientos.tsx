@@ -1,5 +1,13 @@
 import { useState } from "react";
 import Conocimiento from "./Conocimiento";
+import "../styles/Conocimientos.scss";
+import iconoPy from "../assets/python-logo.png";
+import iconoJava from "../assets/java-logo.png";
+import iconoJS from "../assets/js-logo.jpeg";
+import iconoOracle from "../assets/oracle-logo.png";
+import iconoSqlite from "../assets/sqlite-logo.png";
+import iconoMysql from "../assets/mysql-logo.png";
+import { Star } from "lucide-react";
 
 const Conocimientos = () => {
   const [activo, setActivo] = useState(1);
@@ -58,32 +66,73 @@ const Conocimientos = () => {
               <h2>Lenguajes de programación</h2>
               <div className="separador__descripcion__conocimientos" />
             </article>
-            <div
-              className="lenguajes__descripcion__conocimientos"
-              style={{ flex: 5 }}
-            >
+            <div className="lenguajes__descripcion__conocimientos">
               <div className="python__descripcion__conocimientos">
-                <div className="imagen" />
-                <p style={{ fontSize: "26px", fontWeight: 600 }}>Python</p>
-                <p style={{ fontSize: "16px" }}>
-                  Librerias: Numpy, matplotlib, xarray, pandas.
-                </p>
-                <p style={{ fontSize: "16px" }}>
-                  Frameworks: PyQT, flask, TKinter.
-                </p>
+                <img src={iconoPy} alt="icono-python" />
+                <h4>Python</h4>
+                <ul className="lista__conocimientos">
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Librerías:</span> Numpy,
+                    Matplotlib, Xarray, Pandas, Scikit-learn, TensorFlow
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Frameworks:</span> PyQt,
+                    Flask, Tkinter, FastAPI
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Paradigmas:</span> OOP,
+                    Programación funcional, Scripting
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Experiencia:</span>{" "}
+                    Ciencia de datos, automatización, aplicaciones de
+                    escritorio, APIs
+                  </li>
+                </ul>
               </div>
               <div className="java__descripcion__conocimientos">
-                <div className="imagen" />
-                <p style={{ fontSize: "26px", fontWeight: 600 }}>Java</p>
-                <p style={{ fontSize: "16px" }}>Librerias: JavaFX.</p>
+                <img src={iconoJava} alt="icono-java" />
+                <h4>Java</h4>
+                <ul className="lista__conocimientos">
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Librerías:</span> JavaFX
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Paradigmas:</span> OOP,
+                    Concurrencia
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Experiencia:</span>{" "}
+                    Aplicaciones de escritorio, proyectos académicos
+                  </li>
+                </ul>
               </div>
               <div className="js__descripcion__conocimientos">
-                <div className="imagen" />
-                <p style={{ fontSize: "26px", fontWeight: 600 }}>JS</p>
-                <p style={{ fontSize: "16px" }}>Librerias: React, BootStrap.</p>
-                <p style={{ fontSize: "16px" }}>
-                  Frameworks: Angular, Electron.
-                </p>
+                <img src={iconoJS} alt="icono-javascript" />
+                <h4>JavaScript</h4>
+                <ul className="lista__conocimientos">
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Librerías:</span>{" "}
+                    <strong>React</strong> (Router, Hook Form),{" "}
+                    <strong>JWT</strong>, BodyParser, Passport, CORS, Sesiones,
+                    Cookies
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Frameworks:</span>{" "}
+                    <strong>Angular</strong>, <strong>Electron</strong>,{" "}
+                    <strong>ExpressJS</strong>
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Paradigmas:</span>{" "}
+                    Programación funcional, OOP, Asíncrono (Promises,
+                    Async/Await)
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: 600 }}>Experiencia:</span>{" "}
+                    Desarrollo de SPAs, APIs REST, aplicaciones de escritorio,
+                    autenticación, integración de servicios
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -95,67 +144,48 @@ const Conocimientos = () => {
               <h2>Lenguajes SQL</h2>
               <div className="separador__descripcion__conocimientos" />
             </article>
-            <article
-              style={{
-                flex: 5,
-                padding: "10px",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <div
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  animation: "glow__separador 8s ease infinite",
-                  height: "80%",
-                  borderRadius: 6,
-                }}
-              >
-                <div
-                  className="db__descripcion__conocimientos"
-                  style={{
-                    flex: 1,
-                    borderRight: "none",
-                    borderTopRightRadius: 0,
-                    borderBottomRightRadius: 0,
-                  }}
-                >
+            <article className="db__descripcion__conocimientos">
+              <div className="conocimientos__db">
+                <div className="conocimiento__db">
                   <div className="mysql__descripcion__conocimientos">
-                    <div className="imagen" />
+                    <img src={iconoMysql} alt="icono-mysql" />
                   </div>
                   <h3>MySQL</h3>
                 </div>
-                <div
-                  className="card db__descripcion__conocimientos"
-                  style={{
-                    flex: 1,
-                    borderRight: "none",
-                    borderLeft: "none",
-                    borderRadius: 0,
-                  }}
-                >
+                <div className="conocimiento__db">
                   <div className="osql__descripcion__conocimientos">
-                    <div className="imagen" />
+                    <img src={iconoOracle} alt="icono-oracle" />
                   </div>
                   <h3>Oracle SQL</h3>
                 </div>
-                <div
-                  className="card db__descripcion__conocimientos"
-                  style={{
-                    flex: 1,
-                    borderLeft: "none",
-                    borderTopLeftRadius: 0,
-                    borderBottomLeftRadius: 0,
-                  }}
-                >
+                <div className="conocimiento__db">
                   <div className="sql3__descripcion__conocimientos">
-                    <div className="imagen" />
+                    <img src={iconoSqlite} alt="icono-sqlite" />
                   </div>
                   <h3>SQLite3</h3>
                 </div>
               </div>
+              <ul className="lista__conocimientos__texto">
+                <li>
+                  Experiencia en <strong>diseño</strong> y{" "}
+                  <strong>gestión avanzada</strong> de bases de datos
+                  relacionales, así como <strong>modelado de esquemas</strong>{" "}
+                  como modelos relacionales y entidad-relación.
+                </li>
+                <li>
+                  Aplicación de la <strong>tercera forma normal (3NF)</strong>{" "}
+                  para optimizar la estructura y eliminar redundancias.
+                </li>
+                <li></li>
+                <li>
+                  Experiencia en{" "}
+                  <strong>
+                    consultas complejas, normalización y optimización de
+                    rendimiento
+                  </strong>
+                  .
+                </li>
+              </ul>
             </article>
           </div>
           <div className="seccion__descripcion__conocimientos">
@@ -170,10 +200,99 @@ const Conocimientos = () => {
               className="herramientas__descripcion__conocimientos"
               style={{ flex: 5 }}
             >
-              <p>
-                Please please please let me let me let me let me get what i want
-                this time
-              </p>
+              <div className="herramientas__categorias">
+                <div className="herramientas__categoria">
+                  <h4>Frontend</h4>
+                  <ul>
+                    <li>
+                      React{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                    <li>Angular</li>
+                    <li>Electron</li>
+                    <li>HTML5</li>
+                    <li>
+                      CSS3 / SASS{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                    <li>
+                      JavaScript / TypeScript{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <div className="herramientas__categoria">
+                  <h4>Backend</h4>
+                  <ul>
+                    <li>
+                      Node.js{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                    <li>ExpressJS</li>
+                    <li>Flask</li>
+                    <li>
+                      FastAPI{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                    <li>
+                      JWT{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <div className="herramientas__categoria">
+                  <h4>DevOps</h4>
+                  <ul>
+                    <li>InfinityHost</li>
+                    <li>AWS Lambda</li>
+                    <li>
+                      Vercel{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                    <li>Netlify</li>
+                  </ul>
+                </div>
+                <div className="herramientas__categoria">
+                  <h4>Colaboración</h4>
+                  <ul>
+                    <li>
+                      Git{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                    <li>
+                      GitHub{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </article>
           </div>
         </div>

@@ -1,0 +1,31 @@
+@use "sass:color";
+
+$hover-text-color: #d69558;
+$color-1: #ff7b00;
+$color-1-light: color.mix(white, $color-1, 15%);
+$color-1-lighter: color.mix(white, $color-1, 35%);
+$color-1-dark: color.mix(black, $color-1, 20%);
+$color-2: #bd8bff;
+$color-2-light: color.mix(white, $color-2, 15%);
+$color-2-lighter: color.mix(white, $color-2, 35%);
+$color-2-dark: color.mix(black, $color-2, 20%);
+$color-3: #a23eff;
+$color-3-light: color.mix(white, $color-3, 15%);
+$color-3-lighter: color.mix(white, $color-3, 35%);
+$color-3-dark: color.mix(black, $color-3, 20%);
+$color-4: #c300ff;
+$color-4-light: color.mix(white, $color-4, 15%);
+$color-4-lighter: color.mix(white, $color-4, 35%);
+$color-4-dark: color.mix(black, $color-4, 20%);
+$color-5: #ff0055;
+$color-5-light: color.mix(white, $color-5, 15%);
+$color-5-lighter: color.mix(white, $color-5, 35%);
+$color-5-dark: color.mix(black, $color-5, 20%);
+$color-6: #ff00c8;
+$color-6-light: color.mix(white, $color-6, 15%);
+$color-6-lighter: color.mix(white, $color-6, 35%);
+$color-6-dark: color.mix(black, $color-6, 20%);
+$bg-color: #241f2a;
+$bg-color-light: color.mix(white, #241f2a, 10%);
+$primary-font: "Quicksand", "Trebuchet MS", "Lucida Sans Unicode",
+  "Lucida Grande", "Lucida Sans", Arial, sans-serif !important;
