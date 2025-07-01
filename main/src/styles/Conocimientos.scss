@@ -378,9 +378,6 @@
           padding: 0 1.5em;
           list-style: none;
           font-size: 16px;
-          @media (max-width: 768px) {
-            font-size: 14px;
-          }
           color: $color-5-lighter;
           background: linear-gradient(
             to top,
@@ -391,6 +388,9 @@
           box-shadow: 0 2px 12px 0 rgba($color-5, 0.07);
           position: relative;
           overflow: hidden;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
 
           li {
             position: relative;
