@@ -1,0 +1,31 @@
+footer {
+  padding: 1rem;
+  text-align: center;
+  background: linear-gradient(to bottom, $bg-color, #000, #000);
+  padding-top: 50px;
+  color: #fff;
+  z-index: 1;
+  div {
+    &:last-child {
+      margin-top: 0.5rem;
+      a {
+        color: $color-2-lighter;
+        margin: 0 0.5rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: filter 0.2s;
+        .icon {
+          fill: $color-2-lighter;
+          width: 1.2em;
+          height: 1.2em;
+          margin-right: 0.4em;
+          vertical-align: middle;
+        }
+        &:hover {
+          filter: brightness(2);
+        }
+      }
+    }
+  }
+}

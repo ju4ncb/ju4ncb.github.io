@@ -6,6 +6,7 @@
 body {
   font-family: $primary-font;
   background: $bg-color;
+  overflow-x: hidden;
 }
 
 h1,
@@ -33,8 +34,53 @@ p {
   font-weight: 500;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
 main {
   background: $bg-color;
   height: 1200px;
   display: block;
+}
+
+#seccion-contacto {
+  background: linear-gradient(
+    to bottom,
+    #00000000,
+    rgba($color-4-dark, 0.2),
+    #00000000
+  );
+}
+
+#seccion-conocimientos {
+  background: linear-gradient(
+    to bottom,
+    #00000000,
+    rgba($color-5-dark, 0.2),
+    #00000000
+  );
+}
+
+#seccion-proyectos {
+  background: linear-gradient(
+    to bottom,
+    #00000000,
+    rgba($color-6-dark, 0.2),
+    #00000000
+  );
 }

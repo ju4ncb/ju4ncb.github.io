@@ -1,0 +1,239 @@
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.triangulo__superior__proyectos {
+  display: flex;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba($color-6-dark, 0.5),
+    rgba($color-6-light, 0.2)
+  );
+  width: 100%;
+  height: 175px;
+  transform: translateY(30%);
+  clip-path: polygon(0% 0%, 100% 20%, 100% 90%, 0% 95%);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+  h2 {
+    position: inherit;
+    font-size: 60px;
+    color: $color-6-lighter;
+    text-shadow: 0 0 15px $color-6-lighter;
+    bottom: 2%;
+  }
+  @media (max-width: 768px) {
+    height: 135px;
+    h2 {
+      font-size: 45px;
+    }
+  }
+}
+
+h1 {
+  margin: 1rem auto;
+  text-shadow: 0 0 6px $color-6-light, 0 0 12px $color-6-lighter;
+}
+
+.project-carousel-grid {
+  $s: 67px; // control the size
+  $c1: #3f0032;
+  $c2: #200f20;
+  $l1: transparent 48%, $c1 0 52%, transparent 0;
+  $l2: transparent 1.3%, $c2 0 32%, transparent 0;
+  background: linear-gradient(-45deg, #{$l2}), linear-gradient(45deg, #{$l1}),
+    linear-gradient(45deg, #{$l2}) calc(#{$s} / 2) calc(#{$s} / 2),
+    linear-gradient(-45deg, #{$l1}) $c2;
+  background-size: calc(2 * #{$s}) #{$s}, #{$s} #{$s};
+  position: relative;
+  width: 95vw;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  border: $color-6 1px solid;
+  .carousel-controls {
+    position: absolute;
+    width: 95vw;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none; // Allow clicks to pass through by default
+
+    button {
+      background: rgba($color-6, 0.7);
+      border-radius: 8px;
+      height: 100%;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.2s ease, opacity 0.2s ease;
+      pointer-events: all;
+      svg {
+        color: white;
+        transition: color 0.2s ease;
+      }
+      &:hover:not(:disabled) {
+        background-color: $color-6;
+        svg {
+          color: $color-6-lighter;
+        }
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      svg {
+        display: block;
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.15rem;
+      color: $color-6-lighter;
+      min-width: 70px;
+      text-align: center;
+      letter-spacing: 1.2px;
+      font-weight: bold;
+      padding: 6px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba($color-6-dark, 0.25);
+      text-shadow: 0 0 8px $color-6-light, 0 0 16px $color-6-lighter;
+      z-index: 2;
+    }
+  }
+
+  .grid {
+    margin: 0;
+    width: 95vw;
+    height: 100vh;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    place-items: center;
+    &.only-one {
+      grid-template-columns: 1fr;
+    }
+    &.fade {
+      animation: fade 0.5s ease;
+    }
+  }
+
+  .project-card {
+    display: flex;
+    padding: 10px;
+    aspect-ratio: 1 / 1;
+    max-height: 50vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: box-shadow 0.2s, background-color 0.2s;
+    h3 {
+      margin: 0 0 12px 0;
+      font-size: 1.25rem;
+      color: white;
+      text-shadow: 0 0 6px $color-6-light, 0 0 12px $color-6-lighter;
+    }
+
+    .project-preview {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+      width: 100%;
+      max-height: 70%;
+      border-radius: 8px;
+      overflow: hidden;
+      img {
+        max-height: 100%;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        display: block;
+      }
+    }
+
+    p {
+      margin: 0 0 8px 0;
+      color: white;
+      font-size: 0.98rem;
+      text-shadow: 0 0 4px $color-6-light;
+      width: 100%;
+      text-align: start;
+      @media (max-width: 760px) {
+        font-size: 0.78rem;
+      }
+      strong {
+        color: $color-6-lighter;
+        font-weight: 600;
+        text-shadow: 0 0 6px $color-6;
+      }
+    }
+
+    .project-links {
+      margin-top: 0;
+      display: flex;
+      gap: 16px;
+      border: $color-6-lighter 1px solid;
+      padding: 8px;
+      border-radius: 6px;
+      a {
+        color: $color-6-lighter;
+        text-decoration: none;
+        font-weight: 500;
+        transition: text-decoration 0.2s, color 0.2s, text-shadow 0.2s;
+        text-shadow: 0 0 6px $color-6-light;
+        filter: brightness(1.6);
+        &:hover {
+          text-decoration: underline;
+          color: white;
+          text-shadow: 0 0 12px $color-6-lighter, 0 0 24px $color-6;
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 700px) {
+  .project-carousel-grid {
+    height: 75vh;
+    .carousel-controls {
+      button {
+        width: 20px;
+        padding: 2px;
+      }
+    }
+    .grid {
+      height: 75vh;
+      padding: 0 20px;
+      .project-card {
+        padding: 8px;
+        max-height: 75vh;
+      }
+    }
+  }
+}

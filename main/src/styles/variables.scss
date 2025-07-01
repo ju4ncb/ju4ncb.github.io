@@ -20,6 +20,7 @@ $color-4-dark: color.mix(black, $color-4, 20%);
 $color-5: #ff0055;
 $color-5-light: color.mix(white, $color-5, 15%);
 $color-5-lighter: color.mix(white, $color-5, 35%);
+$color-5-lightest: color.mix(white, $color-5, 55%);
 $color-5-dark: color.mix(black, $color-5, 20%);
 $color-6: #ff00c8;
 $color-6-light: color.mix(white, $color-6, 15%);

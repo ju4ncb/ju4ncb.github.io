@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Conocimiento from "./Conocimiento";
 import "../styles/Conocimientos.scss";
 import iconoPy from "../assets/python-logo.png";
@@ -7,10 +7,23 @@ import iconoJS from "../assets/js-logo.jpeg";
 import iconoOracle from "../assets/oracle-logo.png";
 import iconoSqlite from "../assets/sqlite-logo.png";
 import iconoMysql from "../assets/mysql-logo.png";
-import { Star } from "lucide-react";
+import reactFloating from "../assets/floating-react.png";
+import typescriptFloating from "../assets/floating-typescript.png";
+import pythonFloating from "../assets/floating-python.png";
+import javaFloating from "../assets/floating-java.png";
+import nodeJSFloating from "../assets/floating-nodeJS.png";
+import jupyterFloating from "../assets/floating-jupyter.png";
+import { ChevronRightCircle, Star } from "lucide-react";
 
 const Conocimientos = () => {
   const [activo, setActivo] = useState(1);
+  const [visible, setVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   function handleClick(id: number) {
     setActivo(id);
     const element = document.getElementById("descripcionConocimientos");
@@ -20,12 +33,12 @@ const Conocimientos = () => {
     console.log(element?.style.transform);
   }
   return (
-    <section id="seccion-conocimientos">
+    <section id="seccion-conocimientos" style={{ position: "relative" }}>
       <div className="titulo__conocimientos">
         <h2>CONOCIMIENTOS</h2>
       </div>
       <div className="caja__conocimientos">
-        <div className="conocimientos">
+        <div className={visible ? "conocimientos" : "conocimientos hidden"}>
           <Conocimiento
             id={1}
             idActivo={activo}
@@ -53,6 +66,14 @@ const Conocimientos = () => {
             />
             <p>Desarrollo web</p>
           </Conocimiento>
+          {window.innerWidth < 768 && (
+            <div
+              className="left-arrow"
+              onClick={() => setVisible((prev) => !prev)}
+            >
+              <ChevronRightCircle />
+            </div>
+          )}
         </div>
         <div
           className="descripcion__conocimientos"
@@ -66,6 +87,22 @@ const Conocimientos = () => {
               <h2>Lenguajes de programación</h2>
               <div className="separador__descripcion__conocimientos" />
             </article>
+            <div
+              style={{
+                marginBottom: 16,
+                textAlign: "center",
+                color: "#888",
+                fontStyle: "italic",
+                fontSize: "1rem",
+              }}
+            >
+              <span>
+                <strong>Consejo:</strong>
+                {isMobile
+                  ? " toca para ver detalles. Presiona la flecha en la izquierda para más."
+                  : " pasa el mouse sobre cada tecnología para ver detalles. Hay más a la izquierda."}
+              </span>
+            </div>
             <div className="lenguajes__descripcion__conocimientos">
               <div className="python__descripcion__conocimientos">
                 <img src={iconoPy} alt="icono-python" />
@@ -274,6 +311,25 @@ const Conocimientos = () => {
                   </ul>
                 </div>
                 <div className="herramientas__categoria">
+                  <h4>UI/UX</h4>
+                  <ul>
+                    <li>
+                      Balsamiq{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                    <li>
+                      Figma{" "}
+                      <Star
+                        size={16}
+                        style={{ marginLeft: 4, color: "#FFD700" }}
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <div className="herramientas__categoria">
                   <h4>Colaboración</h4>
                   <ul>
                     <li>
@@ -296,6 +352,30 @@ const Conocimientos = () => {
             </article>
           </div>
         </div>
+      </div>
+      <div className="floating-icons">
+        <img src={reactFloating} className="icon neon top-left" alt="React" />
+        <img
+          src={typescriptFloating}
+          className="icon neon mid-left"
+          alt="TypeScript"
+        />
+        <img
+          src={pythonFloating}
+          className="icon neon bottom-left"
+          alt="Python"
+        />
+        <img src={javaFloating} className="icon neon top-right" alt="Java" />
+        <img
+          src={nodeJSFloating}
+          className="icon neon mid-right"
+          alt="Node.js"
+        />
+        <img
+          src={jupyterFloating}
+          className="icon neon bottom-right"
+          alt="Jupyter"
+        />
       </div>
     </section>
   );

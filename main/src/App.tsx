@@ -1,5 +1,6 @@
 import Conocimientos from "./components/Conocimientos";
 import Contacto from "./components/Contacto";
+import Footer from "./components/Footer";
 import Inicio from "./components/Inicio";
 import NavBar from "./components/NavBar";
 import Proyectos from "./components/Proyectos";
@@ -14,6 +15,7 @@ function App() {
         <Contacto />
         <Conocimientos />
         <Proyectos />
+        <Footer />
       </main>
     </>
   );

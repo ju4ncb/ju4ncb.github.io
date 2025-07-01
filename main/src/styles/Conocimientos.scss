@@ -30,9 +30,16 @@
     color: $color-5-lighter;
     text-shadow: 0 0 15px $color-5-lighter;
   }
+  @media (max-width: 768px) {
+    height: 135px;
+    h2 {
+      font-size: 45px;
+    }
+  }
 }
 
 .caja__conocimientos {
+  position: relative;
   display: flex;
   height: 500px;
   width: min(900px, 90%);
@@ -40,12 +47,37 @@
   margin-right: auto;
   border-radius: 30px;
   overflow: hidden;
+  scrollbar-width: none;
+  @media (max-width: 768px) {
+    height: 720px;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .conocimientos {
     cursor: pointer;
-    flex: 0.75;
+    height: 100%;
+    z-index: 2;
+    width: 220px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(to bottom, rgba($color-5, 0.2), #00000000);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    @media (max-width: 768px) {
+      position: absolute;
+      &.hidden {
+        transform: translateX(-220px);
+        .left-arrow {
+          svg {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
     .conocimiento {
       flex: 1;
       display: flex;
@@ -54,6 +86,7 @@
       gap: 1em;
       padding: 0 20px;
       color: $color-5-lighter;
+      transition: color 0.4s, background-color 0.4s;
       i {
         font-size: 36px;
       }
@@ -62,18 +95,17 @@
         transition: color 0.4s;
         font-size: 22px;
       }
-      transition: color 0.4s, background-color 0.4s;
     }
     .conocimiento:hover,
     .conocimiento__active {
-      background-color: rgba($color-5-lighter, 0.06);
-      color: $color-5-light;
+      background-color: rgba($color-5-lightest, 0.26);
+      color: $color-5-lighter;
       p {
-        color: $color-5-light;
+        color: $color-5-lighter;
       }
     }
     .conocimiento__active {
-      background-color: rgba($color-5-lighter, 0.1);
+      background-color: rgba($color-5-lighter, 0.2);
     }
   }
   .descripcion__conocimientos {
@@ -86,7 +118,7 @@
       rgba($bg-color-light, 0.4),
       #00000000
     );
-    transition: transform 1s ease-in-out;
+    transition: transform 0.3s ease;
     .seccion__descripcion__conocimientos {
       flex: 1;
       display: flex;
@@ -123,12 +155,25 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        @media (max-width: 768px) {
+          flex-direction: column;
+          .python__descripcion__conocimientos {
+            border-top-right-radius: 35px;
+            border-bottom-left-radius: 0 !important;
+          }
+          .js__descripcion__conocimientos {
+            border-bottom-left-radius: 35px;
+            border-top-right-radius: 0 !important;
+          }
+        }
         .python__descripcion__conocimientos,
         .java__descripcion__conocimientos,
         .js__descripcion__conocimientos {
           display: flex;
           flex: 1;
-          min-height: 350px;
+          @media (min-width: 769px) {
+            min-height: 350px;
+          }
           padding: 10px;
           flex-direction: column;
           justify-content: center;
@@ -177,7 +222,8 @@
           border-top-left-radius: 35px;
           border-bottom-left-radius: 35px;
         }
-        .python__descripcion__conocimientos:hover {
+        .python__descripcion__conocimientos:hover,
+        .python__descripcion__conocimientos:focus {
           background-color: rgba(#646464, 0.3);
           h4 {
             color: #57b3ff;
@@ -194,7 +240,8 @@
           flex: 0.75;
           background: rgba(white, 0.9);
         }
-        .java__descripcion__conocimientos:hover {
+        .java__descripcion__conocimientos:hover,
+        .java__descripcion__conocimientos:focus {
           background-color: rgba(#e76f00, 0.3);
           background-position-y: -75%;
           h4 {
@@ -214,7 +261,8 @@
           border-bottom-right-radius: 35px;
           transition: background-color $fade-time ease;
         }
-        .js__descripcion__conocimientos:hover {
+        .js__descripcion__conocimientos:hover,
+        .js__descripcion__conocimientos:focus {
           background-color: rgba(#5e5c00, 0.3);
           h4 {
             color: #fffc57;
@@ -262,6 +310,9 @@
             flex-direction: column;
             align-items: center;
             gap: 0.2rem;
+            h3 {
+              font-size: 22px;
+            }
             div {
               img {
                 background-repeat: no-repeat;
@@ -269,9 +320,24 @@
                 width: 70%;
               }
             }
-            .mysql__descripcion__conocimientos {
+            .mysql__descripcion__conocimientos,
+            .osql__descripcion__conocimientos,
+            .sql3__descripcion__conocimientos {
               height: 125px;
               width: 125px;
+            }
+            @media (max-width: 768px) {
+              .mysql__descripcion__conocimientos,
+              .osql__descripcion__conocimientos,
+              .sql3__descripcion__conocimientos {
+                height: 100px;
+                width: 100px;
+              }
+              h3 {
+                font-size: 18px;
+              }
+            }
+            .mysql__descripcion__conocimientos {
               display: flex;
               background: white;
               clip-path: inset(10% round 25px);
@@ -283,8 +349,6 @@
               }
             }
             .osql__descripcion__conocimientos {
-              height: 125px;
-              width: 125px;
               display: flex;
               background: #ffe0e8;
               clip-path: inset(10% round 25px);
@@ -296,8 +360,6 @@
               }
             }
             .sql3__descripcion__conocimientos {
-              height: 125px;
-              width: 125px;
               display: flex;
               background: #ffdcf6;
               clip-path: inset(10% round 25px);
@@ -315,6 +377,9 @@
           padding: 0 1.5em;
           list-style: none;
           font-size: 16px;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
           color: $color-5-lighter;
           background: linear-gradient(
             to top,
@@ -401,7 +466,7 @@
           flex-wrap: wrap;
           justify-content: space-evenly;
           width: 100%;
-          gap: 24px;
+          gap: 8px;
         }
 
         .herramientas__categoria {
@@ -409,11 +474,11 @@
           border-radius: 18px;
           box-shadow: 0 1px 6px 0 rgba($color-5, 0.07);
           padding: 18px 22px;
-          min-width: 170px;
+          min-width: 125px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          transition: background 0.3s, box-shadow 0.3s;
+          transition: background-color 0.3s, box-shadow 0.3s;
 
           &:hover {
             background: rgba($color-5-light, 0.13);
@@ -435,8 +500,10 @@
             padding: 0;
             margin: 0;
             text-align: center;
-
             li {
+              display: flex;
+              justify-content: center;
+              align-items: center;
               color: $color-5-lighter;
               font-size: 15px;
               margin: 6px 0;
@@ -447,8 +514,152 @@
               }
             }
           }
+          @media (max-width: 768px) {
+            h4 {
+              font-size: 18px;
+            }
+            ul {
+              li {
+                font-size: 12px;
+                svg {
+                  width: 12px !important;
+                }
+              }
+            }
+          }
         }
       }
+    }
+  }
+  .left-arrow {
+    position: absolute;
+    text-align: center;
+    line-height: 540px;
+    right: -32px;
+    top: 12.5%;
+    width: 32px;
+    height: 75%;
+    display: block;
+    background: linear-gradient(to bottom, #ff005533, #ff00550c);
+    z-index: 3;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: $color-5-dark 3px solid;
+    border-right: $color-5-dark 3px solid;
+    border-bottom: $color-5-dark 3px solid;
+    filter: drop-shadow(0 0 8px $color-5-light)
+      drop-shadow(0 0 16px $color-5-light);
+    opacity: 0.85;
+    svg {
+      transition: transform 0.6s ease;
+      transform: rotate(-540deg);
+      color: $color-5-lighter;
+      filter: drop-shadow(0 0 8px $color-5-light)
+        drop-shadow(0 0 16px $color-5-light) brightness(1.5);
+    }
+  }
+}
+
+.floating-icons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100vw - 150px);
+  height: calc(100% - 220px);
+  top: 220px;
+  pointer-events: none; // so they don't block interaction
+  z-index: 5;
+  .icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.85;
+    transition: transform 0.5s ease;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  // Neon variants
+  .neon {
+    filter: drop-shadow(0 0 12px white) brightness(1.8);
+  }
+
+  // Positions
+  .top-left {
+    top: 0%;
+    left: -50px;
+  }
+  .mid-left {
+    top: calc(40% - 20px);
+    left: -50px;
+  }
+  .bottom-left {
+    bottom: 20%;
+    left: -50px;
+  }
+
+  .top-right {
+    top: 20%;
+    right: -50px;
+  }
+  .mid-right {
+    top: calc(60% - 20px);
+    right: -50px;
+  }
+  .bottom-right {
+    bottom: 0%;
+    right: -50px;
+  }
+
+  // Animation
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @media (max-width: 768px) {
+    width: calc(100vw - 110px);
+    .icon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      opacity: 0.85;
+      transition: transform 0.5s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+    // Positions
+    .top-left {
+      top: -105px;
+      right: auto;
+      left: -40px;
+    }
+    .top-right {
+      top: -100px;
+      right: 0;
+      left: auto;
+    }
+    .mid-left {
+      top: -95px;
+      right: auto;
+      left: calc(40vw - 40px);
+    }
+    .mid-right {
+      top: auto;
+      bottom: -65px;
+      right: calc(40vw - 15px);
+    }
+    .bottom-left {
+      bottom: -55px;
+      right: calc(60vw - 15px);
+      top: auto;
+    }
+    .bottom-right {
+      bottom: -60px;
+      right: 0;
+      left: auto;
     }
   }
 }

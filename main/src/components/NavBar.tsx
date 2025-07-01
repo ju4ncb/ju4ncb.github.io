@@ -10,10 +10,10 @@ const NavBar = () => {
 
   function determineClassBySection() {
     const sections = [
-      { id: "seccion-inicio", color: "nav-color-1", link: 1 },
-      { id: "seccion-contacto", color: "nav-color-2", link: 2 },
-      { id: "seccion-conocimientos", color: "nav-color-3", link: 3 },
-      { id: "seccion-proyectos", color: "nav-color-4", link: 4 },
+      { id: "seccion-inicio", color: "nav-color-0", link: 1 },
+      { id: "seccion-contacto", color: "nav-color-1", link: 2 },
+      { id: "seccion-conocimientos", color: "nav-color-2", link: 3 },
+      { id: "seccion-proyectos", color: "nav-color-3", link: 4 },
     ];
     let found = false;
     for (let i = sections.length - 1; i >= 0; i--) {
