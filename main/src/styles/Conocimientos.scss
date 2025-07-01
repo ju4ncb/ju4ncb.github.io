@@ -171,15 +171,16 @@
         .js__descripcion__conocimientos {
           display: flex;
           flex: 1;
-          @media (min-width: 769px) {
-            min-height: 350px;
-          }
           padding: 10px;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           transition: background-color $fade-time ease,
             background-position-x $fade-time ease-in-out;
+          @media (min-width: 769px) {
+            min-height: 350px;
+          }
+
           &:hover {
             img {
               transform: translateY(-10px);
