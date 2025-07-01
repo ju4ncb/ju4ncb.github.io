@@ -102,21 +102,31 @@ const ProjectCarouselGrid: React.FC<Props> = ({ projects, itemsPerSlide }) => {
         {slides[currentSlide].map((project, idx) => (
           <div className="project-card" key={idx}>
             <h3>{project.title}</h3>
-            <div className="project-preview">{project.preview}</div>
-            <p>{project.description}</p>
+            <a
+              className="project-preview-link"
+              href={project.pageUrl ? project.pageUrl : project.githubUrl}
+              target="_blank"
+            >
+              <div className="project-preview">
+                {
+                  <>
+                    {project.preview} <p>{project.description}</p>
+                  </>
+                }
+              </div>
+            </a>
+
             <p>
-              <strong>Rol:</strong> {project.role}
-            </p>
-            <p>
+              <strong>Rol:</strong> {project.role} <br />
               <strong>Tecnologías usadas:</strong> {project.techUsed}
             </p>
             <div className="project-links">
               {project.pageUrl && (
-                <a href={project.pageUrl}>
+                <a href={project.pageUrl} target="_blank">
                   <strong>Entrar a la página</strong>
                 </a>
               )}
-              <a href={project.githubUrl}>
+              <a href={project.githubUrl} target="_blank">
                 <strong>GitHub</strong>
               </a>
             </div>

@@ -52,14 +52,17 @@ const Contacto = () => {
             <div className="caja__texto__contacto">
               <h3>Acerca de mí</h3>
               <p>
-                Estudiante bilingüe (inglés y español) de ingeniería de sistemas
-                actualmente cursando 8vo semestre, con conocimientos en
-                desarrollo web Fullstack y movil, así como en bases de datos,
-                programación orientada a objetos, Cloud Computing, desarrollo
-                ágil y arquitectura de software. Me apasiona aprender nuevas
-                tecnologías y mejorar mis habilidades constantemente. Busco
-                oportunidades para aplicar mis conocimientos en proyectos reales
-                y seguir creciendo profesionalmente.
+                Soy un estudiante bilingüe (inglés y español) de Ingeniería de
+                Sistemas, actualmente en 8vo semestre. Tengo experiencia en
+                desarrollo web Fullstack y móvil, bases de datos, programación
+                orientada a objetos, Cloud Computing, metodologías ágiles y
+                arquitectura de software.
+              </p>
+              <p>
+                Me apasiona aprender nuevas tecnologías y perfeccionar mis
+                habilidades constantemente. Busco oportunidades para aplicar mis
+                conocimientos en proyectos reales, aportar valor y seguir
+                creciendo profesionalmente en el mundo de la tecnología.
               </p>
             </div>
             <div className="contenedor__imagen__contacto">
