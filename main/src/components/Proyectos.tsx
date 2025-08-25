@@ -7,11 +7,12 @@ import jesiSrc from "../assets/jesi-preview.png";
 import ruletaSrc from "../assets/ruleta-preview.png";
 import "../styles/Proyectos.scss";
 import { useEffect, useState } from "react";
+import ImgWithLoader from "./ImgWithLoader";
 
 const webProjects = [
   {
     title: "THEMIS",
-    preview: <img src={themisSrc} alt="Vista previa de Themis" />,
+    preview: <ImgWithLoader src={themisSrc} alt="Vista previa de Themis" />,
     pageUrl: "https://themis-front.vercel.app/",
     githubUrl: "https://github.com/ju4ncb/themis",
     role: "Desarrollador Full Stack y Líder de Proyecto",
@@ -22,7 +23,7 @@ const webProjects = [
   },
   {
     title: "H2O Esperanza",
-    preview: <img src={h2oSrc} alt="Vista previa de H2O Esperanza" />,
+    preview: <ImgWithLoader src={h2oSrc} alt="Vista previa de H2O Esperanza" />,
     pageUrl: "https://h2oesperanza.netlify.app/",
     githubUrl: "https://github.com/ju4ncb/h2o",
     role: "Creador y Desarrollador Full Stack",
@@ -32,7 +33,12 @@ const webProjects = [
   },
   {
     title: "Wheel Tracker",
-    preview: <img src={wheelTrackerSrc} alt="Vista previa de Wheel Tracker" />,
+    preview: (
+      <ImgWithLoader
+        src={wheelTrackerSrc}
+        alt="Vista previa de Wheel Tracker"
+      />
+    ),
     pageUrl: "https://wheel-tracker-front.vercel.app/",
     githubUrl: "https://github.com/ju4ncb/wheel_tracker",
     role: "Desarrollador Full Stack y Líder de Proyecto",
@@ -42,7 +48,7 @@ const webProjects = [
   },
   {
     title: "CONTA",
-    preview: <img src={contaSrc} alt="Vista previa de Conta Page" />,
+    preview: <ImgWithLoader src={contaSrc} alt="Vista previa de Conta Page" />,
     pageUrl: "https://conta-front.vercel.app/",
     githubUrl: "https://github.com/ju4ncb/conta_page",
     role: "Desarrollador Full Stack y Líder de Proyecto",
@@ -53,7 +59,10 @@ const webProjects = [
   {
     title: "Portafolio Jessica Santos",
     preview: (
-      <img src={jesiSrc} alt="Vista previa de Portafolio Jessica Santos" />
+      <ImgWithLoader
+        src={jesiSrc}
+        alt="Vista previa de Portafolio Jessica Santos"
+      />
     ),
     pageUrl: "https://jessloren.netlify.app",
     githubUrl: "https://github.com/ju4ncb/portafolio-jes",
