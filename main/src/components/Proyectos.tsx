@@ -55,7 +55,7 @@ const webProjects = [
     preview: (
       <img src={jesiSrc} alt="Vista previa de Portafolio Jessica Santos" />
     ),
-    pageUrl: "https://ju4ncb.github.io/portafolio-jesi/",
+    pageUrl: "https://jessloren.netlify.app",
     githubUrl: "https://github.com/ju4ncb/portafolio-jes",
     role: "Desarrollador Front y Creador del diseño",
     techUsed: "React Vite, SCSS",

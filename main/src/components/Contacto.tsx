@@ -94,12 +94,14 @@ const Contacto = () => {
               </a>
             </div>
             <div className="linea__texto__contacto">
-              <img
-                className="icon icon__img"
-                src={telephoneSrc}
-                alt="icon-telephone"
-              />
-              +57 300 614 70 44
+              <a href="tel:+573006147044">
+                <img
+                  className="icon icon__img"
+                  src={telephoneSrc}
+                  alt="icon-telephone"
+                />
+                +57 300 614 70 44
+              </a>
             </div>
             <div className="linea__texto__contacto">
               <a href="mailto:ju4ncb@gmail.com">

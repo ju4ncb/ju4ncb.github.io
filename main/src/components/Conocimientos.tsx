@@ -9,8 +9,10 @@ import iconoSqlite from "../assets/sqlite-logo.png";
 import iconoMysql from "../assets/mysql-logo.png";
 import reactFloating from "../assets/floating-react.png";
 import typescriptFloating from "../assets/floating-typescript.png";
-import pythonFloating from "../assets/floating-python.png";
+import angularFloating from "../assets/floating-angular.png";
+import phpFloating from "../assets/floating-php.png";
 import javaFloating from "../assets/floating-java.png";
+import pythonFloating from "../assets/floating-python.png";
 import nodeJSFloating from "../assets/floating-nodeJS.png";
 import jupyterFloating from "../assets/floating-jupyter.png";
 import { ChevronRightCircle, Star } from "lucide-react";
@@ -357,19 +359,25 @@ const Conocimientos = () => {
         <img src={reactFloating} className="icon neon top-left" alt="React" />
         <img
           src={typescriptFloating}
-          className="icon neon mid-left"
+          className="icon neon mid-top-left"
           alt="TypeScript"
         />
         <img
-          src={pythonFloating}
-          className="icon neon bottom-left"
-          alt="Python"
+          src={angularFloating}
+          className="icon neon mid-bottom-left"
+          alt="Angular"
         />
+        <img src={phpFloating} className="icon neon bottom-left" alt="PHP" />
         <img src={javaFloating} className="icon neon top-right" alt="Java" />
         <img
           src={nodeJSFloating}
-          className="icon neon mid-right"
+          className="icon neon mid-top-right"
           alt="Node.js"
+        />
+        <img
+          src={pythonFloating}
+          className="icon neon mid-bottom-right"
+          alt="Python"
         />
         <img
           src={jupyterFloating}
